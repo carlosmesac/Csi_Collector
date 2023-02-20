@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Csi_Collector</string>
+    <string name="mac">MAC Address</string>
+    <string name="add">Add</string>
+    <string name="front">Front</string>
+    <string name="right">Right</string>
+    <string name="back">Back</string>
+    <string name="left">Left</string>
+    <string name="change_postion">Change Postion</string>
+    <string name="clear_position">Clear Position</string>
+    <string name="current_position">Current Position</string>
+    <string name="capture_name">Capture Name</string>
+    <string name="set">Set</string>
+    <string name="project_name">Project Name:</string>
+    <string name="mac_list">MAC List:</string>
+    <string name="start_capture">Start Capture</string>
+    <string name="navigate_to_app_files_folder">Navigate to App Files Folder</string>
+
+</resources>
