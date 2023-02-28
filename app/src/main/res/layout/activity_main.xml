@@ -92,6 +92,12 @@
         android:layout_height="wrap_content"
         android:text="@string/start_capture" />
 
+    <Button
+        android:id="@+id/button_nav_to_files_folder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/navigate_to_app_files_folder" />
+
     <TextView
         android:id="@+id/tv_macList"
         android:layout_width="wrap_content"
@@ -101,8 +107,39 @@
     <ListView
         android:id="@+id/macListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="260dp">
 
     </ListView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/saveMacList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_mac_list"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_margin="5dp"/>
+        <Button
+            android:id="@+id/clearMacList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_mac_list"
+            android:textColor="@color/design_default_color_error"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_margin="5dp"/>
+        <Button
+            android:id="@+id/loadMacList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/load_last_list"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

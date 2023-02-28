@@ -84,21 +84,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/change_postion" />
+                android:text="@string/change_postion"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/clearPositionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/clear_position" />
+                android:text="@string/clear_position"
+                style="?android:attr/buttonBarButtonStyle" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/button_nav_to_files_folder"
+            android:id="@+id/endCaptureButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/navigate_to_app_files_folder" />
+            android:text="@string/end_capture" />
+
 
         <TextView
             android:id="@+id/tv_csiCounter"

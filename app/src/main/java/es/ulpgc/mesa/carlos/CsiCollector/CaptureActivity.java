@@ -37,7 +37,7 @@ import es.ulpgc.mesa.carlos.CsiCollector.services.ESP32CSISerial;
 public class CaptureActivity extends AppCompatActivity implements CSIDataInterface {
     private EditText positionText;
     private TextView csiString, csiCounter;
-    private Button changePositionButton, clearPositionButton, buttonNavToFilesFolder;
+    private Button changePositionButton, clearPositionButton, endCaptureButton;
     private ArrayList<String> macList;
     private MaterialButtonToggleGroup toggleButton;
     private String orientation = "Front";
@@ -108,29 +108,15 @@ public class CaptureActivity extends AppCompatActivity implements CSIDataInterfa
         });
 
 
-        buttonNavToFilesFolder.setOnClickListener(new View.OnClickListener() {
+        endCaptureButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File directory = new File(Environment.getExternalStorageDirectory() + "/Android/data/es.ulpgc.mesa.carlos.CsiCollector/files");
-
-// Create an intent to open the directory
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                Uri uri = Uri.parse(directory.getAbsolutePath());
-                intent.setDataAndType(uri, "*/*");
-
-// Check if there is a file manager app installed
-                PackageManager packageManager = getPackageManager();
-                List<ResolveInfo> activities = packageManager.queryIntentActivities(intent, 0);
-                boolean isIntentSafe = activities.size() > 0;
-
-// If there is a file manager app installed, start the activity
-                if (isIntentSafe) {
-                    startActivity(intent);
-                }
-
+                Intent intent = new Intent(CaptureActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                //this will always start your activity as a new task
+                startActivity(intent);
             }
         });
-
 
     }
 
@@ -163,10 +149,11 @@ public class CaptureActivity extends AppCompatActivity implements CSIDataInterfa
         toggleButton = findViewById(R.id.toggleButton);
         changePositionButton = findViewById(R.id.changePositionButton);
         clearPositionButton = findViewById(R.id.clearPositionButton);
-        buttonNavToFilesFolder = findViewById(R.id.button_nav_to_files_folder);
 
         csiCounter = findViewById(R.id.tv_csiCounter);
         csiString = findViewById(R.id.tv_csiString);
+
+        endCaptureButton = findViewById(R.id.endCaptureButton);
     }
 
 
