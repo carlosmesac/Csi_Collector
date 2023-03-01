@@ -1,6 +1,7 @@
 package es.ulpgc.mesa.carlos.CsiCollector.services;
 
 import android.content.Context;
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
@@ -28,7 +29,8 @@ public class CSIFileGenerator extends DataCollector {
     public void setup(Context context) {
         if (!Objects.equals(filePrefix, "backup")) {
             try {
-                File test = new File(context.getExternalFilesDir(null), filePrefix + System.currentTimeMillis() + "." + fileType);
+                File test = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+, filePrefix + System.currentTimeMillis() + "." + fileType);
                 localBackup = new FileOutputStream(test, true);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
