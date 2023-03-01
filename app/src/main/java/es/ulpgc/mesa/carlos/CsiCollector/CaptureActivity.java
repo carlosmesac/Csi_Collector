@@ -66,7 +66,6 @@ public class CaptureActivity extends AppCompatActivity implements CSIDataInterfa
         toggleButton.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
             public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
-                String orientation = "";
                 switch (checkedId) {
                     case R.id.bt_north:
                         orientation = "Front";
@@ -81,7 +80,6 @@ public class CaptureActivity extends AppCompatActivity implements CSIDataInterfa
                         orientation = "Back";
                         break;
                     default:
-                        orientation = orientation;
                         break;
                 }
             }
